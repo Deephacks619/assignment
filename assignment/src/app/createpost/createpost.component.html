@@ -1,0 +1,19 @@
+<h2>Add Post</h2>
+
+<form #postdata="ngForm" post="">
+    <label>Enter Userid: </label>
+    <input type="number" placeholder="please enter userId" name="userId" ngModel  required>
+    <br>
+    <br>
+    <label>Title:</label>
+    <input type="text" placeholder="please enter title" name="title" ngModel required>
+    <br>
+    <br>
+    <label>Body:</label>
+    <textarea placeholder="please enter body data..." name="body" ngModel cols="30" rows="10"></textarea>
+    <br>
+    <div style="text-align: center;">
+    <button type="submit"  (click)="addPost(postdata)" [disabled]="!postdata.valid">ADD(+)</button>
+    </div>
+
+</form>

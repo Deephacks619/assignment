@@ -1,0 +1,23 @@
+<div class="flex-container">
+    <main class="main">
+      <article>
+        <p>Some post page content to fill the page.</p>
+      </article>
+      <app-showpost *ngIf="show" [show]="show" [post]="tempdata" [index]="index" (deletePostIndex)="deletePostIndex($event)"></app-showpost>
+      <app-createpost *ngIf="post" (CreatePostToData)="CreatePostToData($event)" ></app-createpost>
+    </main>
+    <nav class="sidebar-nav">
+      <h3>Post Titles</h3>
+      <ul *ngFor="let item of data; let i=index;">
+        <li (click)="showPost(i)">
+          <h5>Post #{{i+1}}</h5> 
+          {{item.title}}
+        </li>
+      </ul>
+
+      <br>
+      <button (click)="addPost()">ADD POST</button>
+    </nav>
+    
+  </div>
+  
